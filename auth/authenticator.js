@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
     if(token) {
         jwt.verify(token, secret, (error, decodedToken) => {
             // if everything is good, error will be undefined
-            if(err) {
+            if(error) {
                 res.status(401).json({ message: 'You cannot pass!' });
             } else {
                 req.decodedToken = decodedToken;

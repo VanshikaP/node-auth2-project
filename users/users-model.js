@@ -30,5 +30,7 @@ function findById(id) {
 }
 
 function findByDepartment(department) {
-    return db('users').where({department});
+    return db('users')
+        .select('id', 'username', 'department')
+        .where({department});
 }
